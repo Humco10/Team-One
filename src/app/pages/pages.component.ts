@@ -1,100 +1,56 @@
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
 import { Component, OnInit } from '@angular/core';
 import { Page } from '../page';
-
+import { slideInDownAnimation } from '../animations';
+import { HostBinding } from '@angular/core';
 
 @Component({
 	selector: 'app-pages',
 	templateUrl: './pages.component.html',
-	styleUrls: ['./pages.component.css']
+	styleUrls: ['./pages.component.css'],
+	animations: [slideInDownAnimation]
 })
 export class PagesComponent implements OnInit {
+	@HostBinding('@routeAnimation') routeAnimation = true;
+	@HostBinding('style.display') display = 'block';
+	//@HostBinding('style.position') position = 'absolute';
+
 	page: Page = {
-		pageNum: this.determinePageNum(),
-		title: this.determineTitle()
+		pageNum: 0,//this.determinePageNum(),
+		title: 'Default Title'//this.determineTitle()
 	};
-	constructor() { }
+	constructor(private route: ActivatedRoute,
+		private router: Router) { }
 
 	ngOnInit() {
+		this.page.title = this.route.snapshot.data['title'];
+		this.page.pageNum = this.route.snapshot.data['pageNum'];
+
 		let pageOne = document.getElementById("page1");
 		let pageTwo = document.getElementById("page2");
 		let pageThree = document.getElementById("page3");
 		let pageFour = document.getElementById("page4");
 
+		//Adds event listeners in order to navigate the views
 		pageOne.addEventListener("click", (evt) => {
 			evt.preventDefault();
-			//this.page.title = "Excelsior the Game";
-			//this.page.pageNum = 2;
-			//document.getElementById("title").innerHTML = this.page.title;
-			//document.getElementById("pageNum").innerHTML = "Page: " + this.page.pageNum;
-			location.pathname = "applet";
+			this.router.navigate(['./applet']);
 		}, false);
 
 		pageTwo.addEventListener("click", (evt) => {
 			evt.preventDefault();
-			//this.page.title = "Find a Tweet";
-			//this.page.pageNum = 3;
-			//document.getElementById("title").innerHTML = this.page.title;
-			//document.getElementById("pageNum").innerHTML = "Page: " + this.page.pageNum;
-			location.pathname = "tweets";
+			this.router.navigate(['./tweets']);
 		}, false);
 
 		pageThree.addEventListener("click", (evt) => {
 			evt.preventDefault();
-			//this.page.title = "Random Shtuff";
-			//this.page.pageNum = 4;
-			//document.getElementById("title").innerHTML = this.page.title;
-			//document.getElementById("pageNum").innerHTML = "Page: " + this.page.pageNum;
-			location.pathname = "random";
+			this.router.navigate(['./random']);
 		}, false);
 
 		pageFour.addEventListener("click", (evt) => {
 			evt.preventDefault();
-			//this.page.title = "Login Through Twitter";
-			//this.page.pageNum = 1;
-			//document.getElementById("title").innerHTML = this.page.title;
-			//document.getElementById("pageNum").innerHTML = "Page: " + this.page.pageNum;
-			location.pathname = "";
+			this.router.navigate(['./']);
 		}, false);
 	}
-
-	determineTitle() {
-		let path = location.pathname;
-		let title = "NULL title";
-
-		if (path === "/") {
-			title = "Login Through Twitter";
-		}
-		else if (path === "/applet") {
-			title = "Excelsior The Game!";
-		}
-		else if (path === "/tweets") {
-			title = "Find a Tweet";
-		}
-		else {
-			title = "Random Shtuff";
-		}
-
-		return title;
-	}
-
-	determinePageNum() {
-		let path = location.pathname;
-		let pageNum = -1;
-
-		if (path === "/") {
-			pageNum = 1;
-		}
-		else if (path === "/applet") {
-			pageNum = 2;
-		}
-		else if (path === "/tweets") {
-			pageNum = 3;
-		}
-		else {
-			pageNum = 4;
-		}
-
-		return pageNum;
-	}
-
 }
