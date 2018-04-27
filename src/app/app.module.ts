@@ -32,4 +32,5 @@ export class AppModule { }
 export class Page {
   id: number;
   name: string;
+  imgPath: string;
 }

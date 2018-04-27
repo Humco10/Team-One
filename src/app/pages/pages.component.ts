@@ -6,7 +6,7 @@ import { slideInDownAnimation } from '../animations';
 import { HostBinding } from '@angular/core';
 
 @Component({
-	selector: 'app-pages',
+	//selector: 'app-pages',
 	templateUrl: './pages.component.html',
 	styleUrls: ['./pages.component.css'],
 	animations: [slideInDownAnimation]
@@ -18,7 +18,8 @@ export class PagesComponent implements OnInit {
 
 	page: Page = {
 		pageNum: 0,//this.determinePageNum(),
-		title: 'Default Title'//this.determineTitle()
+		title: 'Default Title',
+		imgPath: 'siteImage.png'//this.determineTitle()
 	};
 	constructor(private route: ActivatedRoute,
 		private router: Router) { }
@@ -26,6 +27,7 @@ export class PagesComponent implements OnInit {
 	ngOnInit() {
 		this.page.title = this.route.snapshot.data['title'];
 		this.page.pageNum = this.route.snapshot.data['pageNum'];
+		this.page.imgPath = this.route.snapshot.data['imgPath'];
 
 		let pageOne = document.getElementById("page1");
 		let pageTwo = document.getElementById("page2");

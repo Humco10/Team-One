@@ -10,7 +10,8 @@ const pageRoutes: Routes = [
 		component: PagesComponent,
 		data: {
 			title: 'Login Through Twitter!',
-			pageNum: 1
+			pageNum: 1,
+			imgPath: 'assets/siteImage.png'
 		}
 	},
 	{
@@ -18,7 +19,8 @@ const pageRoutes: Routes = [
 		component: PagesComponent,
 		data: {
 			title: 'Excelsior The Game!',
-			pageNum: 2
+			pageNum: 2,
+			imgPath: 'assets/random.png'
 		}
 	},
 	{
@@ -26,7 +28,8 @@ const pageRoutes: Routes = [
 		component: PagesComponent,
 		data: {
 			title: 'Find a Tweet!',
-			pageNum: 3
+			pageNum: 3,
+			imgPath: 'assets/api.png'
 		}
 	},
 	{
@@ -34,7 +37,8 @@ const pageRoutes: Routes = [
 		component: PagesComponent,
 		data: {
 			title: 'Random Shtuff!',
-			pageNum: 4
+			pageNum: 4,
+			imgPath: 'assets/random.png'
 		}
 	}//,
 	/*{ path: '',
