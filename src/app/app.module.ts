@@ -12,6 +12,11 @@ import { PagesModule } from './pages/page.module';
 //import { PagesComponent } from './pages/pages.component';
 import { PageNotFoundComponent } from './not-found.component';
 
+/**
+ * The modules and components that this app is going to include or use. Basically 
+ * all this module does it compiles them all into one module so only this module
+ * has to be imported to use all the other modules and components
+ */
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +33,7 @@ import { PageNotFoundComponent } from './not-found.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+//What is exported by this module (This module itself, and what a page object is)
 export class AppModule { }
 export class Page {
   id: number;
