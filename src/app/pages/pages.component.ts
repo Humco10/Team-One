@@ -71,7 +71,7 @@ export class PagesComponent implements OnInit {
 		//Same as above
 		pageTwo.addEventListener("click", (evt) => {
 			evt.preventDefault();
-			this.router.navigate(['./tweets']);
+			this.router.navigate(['./history']);
 		}, false);
 
 		pageThree.addEventListener("click", (evt) => {

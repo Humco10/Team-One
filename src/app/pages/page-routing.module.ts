@@ -36,10 +36,10 @@ const pageRoutes: Routes = [
 		}
 	},
 	{
-		path: 'tweets',
+		path: 'history',
 		component: PagesComponent,
 		data: {
-			title: 'Find a Tweet!',
+			title: 'Version history of Excelsior to date',
 			pageNum: 3,
 			imgPath: 'assets/api.png'
 		}
