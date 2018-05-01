@@ -2,6 +2,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AppletModule } from './applet/applet.module';
+import { RandomModule } from './random/random.module';
+import { LoginModule } from './login/login.module';
+import { HistoryModule } from './history/history.module';
 
 import { PagesComponent } from './pages.component';
 import { PageRoutingModule } from './page-routing.module';
@@ -18,7 +22,11 @@ import { PageRoutingModule } from './page-routing.module';
 	imports: [
 		CommonModule,
 		FormsModule,
-		PageRoutingModule
+		PageRoutingModule,
+		AppletModule,
+		LoginModule,
+		HistoryModule,
+		RandomModule
 	]
 })
 //All that is exported.

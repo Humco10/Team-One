@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PagesComponent } from './pages.component';
-import { HistoryComponent } from './history/history.component';
-import { AppletComponent } from './applet/applet.component';
-import { LoginComponent } from './login/login.component';
-import { RandomComponent } from './random/random.component';
+import { RandomComponent } from './random.component';
 
 /*
  * Creates a list of Routes called pageRoutes. Each Route object in the list
@@ -20,63 +16,16 @@ import { RandomComponent } from './random/random.component';
  * 
  */
 const pageRoutes: Routes = [
-
-	{
-		path: '',
-		component: PagesComponent,
-		children: [{
-			path: '',
-			component: LoginComponent
-		}],
-		data: {
-			title: 'Login Through Twitter!',
-			pageNum: 1,
-			imgPath: 'assets/siteImage.png'
-		}
-	},
-	{
-		path: 'applet',
-		component: PagesComponent,
-		children: [{
-			path: '',
-			component: AppletComponent
-		}],
-		data: {
-			title: 'Excelsior The Game!',
-			pageNum: 2,
-			imgPath: 'assets/random.png'
-		}
-	},
-	{
-		path: 'history',
-		component: PagesComponent,
-		children: [{
-			path: '',
-			component: HistoryComponent
-		}],
-		data: {
-			title: 'Version history of Excelsior to date',
-			pageNum: 3,
-			imgPath: 'assets/api.png'
-		}
-	},
 	{
 		path: 'random',
-		component: PagesComponent,
-		children: [{
-			path: '',
-			component: RandomComponent
-		}],
+		component: RandomComponent,
 		data: {
 			title: 'Random Shtuff!',
 			pageNum: 4,
 			imgPath: 'assets/random.png'
+			//Any API variables you may need to display
 		}
-	}//,
-	/*{ path: '',
-	  redirectTo: '/heroes',
-	  pathMatch: 'full'
-	}*/
+	}
 ];
 
 //What this module imports and exports. I don't really understand this except
@@ -89,4 +38,4 @@ const pageRoutes: Routes = [
 		RouterModule
 	]
 })
-export class PageRoutingModule { }
+export class RandomRoutingModule { }
