@@ -18,12 +18,12 @@ export const slideInDownAnimation: AnimationEntryMetadata =
 				opacity: 0,
 				transform: 'translateX(-100%)'
 			}),
-			animate('0.5s ease-in')
+			animate('1s ease-in')
 		]),
 		//If user is leaving the page. Ease the elements out within 0.5 seconds.
 		//The elements are not see through, and it eases out in the y direction
 		transition(':leave', [
-			animate('0.5s ease-out', style({
+			animate('1s ease-out', style({
 				opacity: 0,
 				transform: 'translateY(100%)'
 			}))

@@ -1,28 +1,9 @@
-# MyApp
+THIS PROJECT WAS BUILT USING THE ANGULAR FRAMEWORK, AND INCLUDES AN APPLET OF GAME WE BUILT IN JAVA, A VERSION HISTORY PAGE FOR THAT
+GAME, AND A RANDOM API PAGE THAT IS THERE FOR THE FUN OF IT.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+A FEW NOTES ABOUT THE PROJECT, IF ng server DOES NOT WORK AFTER INSTALLATION OF npm install THEN RUN npm install @angular/core AGAIN.
+FOR SOME REASON IT SEEMS TO ONLY WORK IF THERE IS BOTH A LOCAL AND GLOBAL VERSION OF ANGULAR INSTALLED ON THE COMPUTER.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# Team-One
+ALSO THERE IS A SMALL CHANCE IMAGES AND OTHER PAGE DETERMINED FEATURES MAY (PROBABLY NOT THOUGH BECAUSE WE FIXED THAT BUG I BELIEVE)
+BUT THEY MAY NOT WORK. IF THIS IS THE CASE, REMOVE THEM FROM THE ASSETS FOLDER, RESTART THE SERVER, AND PLACE THEM BACK AGAIN. THIS
+SEEMS TO WORK FOR SOME WEIRD REASON.
