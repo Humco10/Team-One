@@ -28,7 +28,8 @@ import { PageNotFoundComponent } from './not-found.component';
     FormsModule,
     BrowserAnimationsModule,
     PagesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

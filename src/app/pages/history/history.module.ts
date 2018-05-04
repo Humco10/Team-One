@@ -18,7 +18,8 @@ import { HistoryRoutingModule } from './history-routing.module';
 	imports: [
 		CommonModule,
 		FormsModule,
-		HistoryRoutingModule
+		HistoryRoutingModule,
+		RouterModule.forRoot([])
 	]
 })
 //All that is exported.
