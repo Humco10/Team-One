@@ -7,8 +7,8 @@ describe('my-app App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display Title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('HumByrd and Knapp Games');
   });
 });
