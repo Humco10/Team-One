@@ -40,10 +40,50 @@ export class RandomComponent implements OnInit {
 	 * template html file loaded in from above. These listners basically
 	 * tell the router to navigate to a given view using a given path.
 	 */
-	ngOnInit() {
+	ngOnInit(
+
+	) {
 		/**
 		 * This is where the API should be loaded in and the data is
 		 * messed with and displayed however you want it.
 		 */
+		const token = `c4202ba26484450c9fb5146b9699f96d`;
+		fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${token}`, {
+			headers: {
+				Authorization: `${token}`,
+
+			}
+		}).then(response => {
+			if (!response.ok) {
+				throw new Error("error");
+			}
+
+			console.log("api worked ");
+			return response.json()
+		}).then(function (data) {
+			let list = document.createElement('ol');
+			data.articles.forEach(function (article) {
+				console.log(article.urlToImage);
+				let listElement = document.createElement('li');
+				let divElement = document.createElement('div');
+				let link = document.createElement('a');
+				let image = document.createElement('image');
+				let text = document.createTextNode(article.title);
+				link.appendChild(text);
+				link.setAttribute('href', `${article.url}`);
+				image.setAttribute('src', `${article.urlToImage}`);
+				divElement.appendChild(link);
+				listElement.appendChild(divElement);
+				listElement.appendChild(image);
+				list.appendChild(listElement);
+			})
+			document.querySelector('.apilist').appendChild(list);
+		})
+
+			.catch(function () {
+				console.log("api error");
+
+			});
+
 	}
 }
