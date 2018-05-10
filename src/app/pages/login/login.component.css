@@ -1,1 +1,13 @@
-	
+@keyframes spin {
+    from {
+      transform: rotateY(0);
+    }
+    to {
+      transform: rotateY(1turn);
+    }
+  }
+  
+  .card {
+    animation: spin 5s ease;
+    animation-iteration-count: infinite;
+  }

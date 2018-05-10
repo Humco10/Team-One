@@ -15,3 +15,18 @@
     margin-right: auto;
     width: 30%;
 }
+.clip-text {
+    background: url(https://media.giphy.com/media/MeMPeeRNSssAU/giphy.gif);
+    background-size: cover;
+    background-position: center;
+    
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 75px;
+    box-sizing: border-box;
+    font-size: 58px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    flex-shrink: 0;
+  }

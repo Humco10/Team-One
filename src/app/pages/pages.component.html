@@ -1,5 +1,7 @@
 <title>{{ page.title }}</title>
-<h2 id="title">{{ page.title }} </h2>
-<h2 id="pageNum">Page: {{ page.pageNum }}</h2>
+<div class = "container">
+<div class="clip-text">{{ page.title }} </div>
+</div>
+<div> .</div>
 <img class="center" width="256" alt="Page Image" src="{{page.imgPath}}">
 <router-outlet></router-outlet>
