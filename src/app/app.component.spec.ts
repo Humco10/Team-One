@@ -29,4 +29,9 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('HumByrd and Knapp Games');
   }));
+  it('should follow link home Page link correctly', async(()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect()
+  }));
 });

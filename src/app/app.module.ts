@@ -11,6 +11,8 @@ import { PagesModule } from './pages/page.module';
 
 //import { PagesComponent } from './pages/pages.component';
 import { PageNotFoundComponent } from './not-found.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 /**
  * The modules and components that this app is going to include or use. Basically 
@@ -21,7 +23,9 @@ import { PageNotFoundComponent } from './not-found.component';
   declarations: [
     AppComponent,
     //PagesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
