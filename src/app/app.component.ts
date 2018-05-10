@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app-root',
+  //templateUrl: './app.component.html',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 //Title of the entire app exported with this component object
 export class AppComponent {
   title = 'HumByrd and Knapp Games';

@@ -1,6 +1,7 @@
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit } from '@angular/core';
+import { ViewEncapsulation } from '@angular/core';
 import { slideInDownAnimation } from '../../animations';
 import { HostBinding } from '@angular/core';
 
@@ -14,6 +15,7 @@ import { HostBinding } from '@angular/core';
 	selector: 'history',
 	templateUrl: './history.component.html',
 	styleUrls: ['./history.component.css'],
+	encapsulation: ViewEncapsulation.None,
 	animations: [slideInDownAnimation]
 })
 /**
@@ -41,38 +43,30 @@ export class HistoryComponent implements OnInit {
 	 * tell the router to navigate to a given view using a given path.
 	 */
 	ngOnInit() {
-		/*
-		fetch('/history/versionHistory.txt')
-			.then((resp) => resp.json()) //Convert response to a json
+		fetch('./versionHistory.txt')
+			.then((resp) => resp.text()) //Convert response to a json
 			.then(function (data) {
+				let text = data;
+				let versions = text.split('|');
 
-				//For each data entry in the data sent in, put it into an li
-				//element and append it to the list.
-				data.feed.entry.forEach(entry => {
-
-					console.log(entry);
-					//const li = document.createElement('li');
-					//li.innerText = entry.title.$t;
-					//ul.appendChild(li);
+				versions.forEach(function (version) {
+					let elements = version.split(':');
+					let list = document.querySelector('.verHist');
+					let divBox = document.createElement('div');
+					let listNode = document.createElement('li');
+					let textNode = document.createTextNode(decodeURI(elements[1].trim()));
+					let versionNum = document.createTextNode(decodeURI(elements[0].trim() + ':'));
+					listNode.appendChild(textNode);
+					divBox.appendChild(versionNum);
+					divBox.appendChild(listNode);
+					divBox.className = 'lists';
+					list.appendChild(divBox);
 				});
-
-				/*
-				let elements = version.split(':');
-				let list = document.querySelector('.verHist');
-				let divBox = document.createElement('div');
-				let listNode = document.createElement('li');
-				let textNode = document.createTextNode(decodeURI(elements[1].trim()));
-				let versionNum = document.createTextNode(decodeURI(elements[0].trim() + ':'));
-				listNode.appendChild(textNode);
-				divBox.appendChild(versionNum);
-				divBox.appendChild(listNode);
-				divBox.className = 'lists';
-				list.appendChild(divBox);
 			})
 			.catch(function (error) {
 				//Clear screen
 				//document.body.innerHTML = '';
-				console.log("Can't find the file yet again!");
+				console.log("Can't find the file!");
 				console.log(location.pathname);
 			});
 
