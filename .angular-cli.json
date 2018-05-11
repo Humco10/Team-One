@@ -10,8 +10,9 @@
             "assets",
             "icon.ico",
             "siteImage.png",
-            "api.png",
-            "random.png",
+            "game.png",
+            "news.png",
+            "Excelsior.jar",
             "versionHistory.txt"
         ],
         "index": "index.html",

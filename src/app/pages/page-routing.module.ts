@@ -29,7 +29,7 @@ const pageRoutes: Routes = [
 			component: LoginComponent
 		}],
 		data: {
-			title: 'Login Through Twitter!',
+			title: 'Humbyrd and Knapp Games',
 			pageNum: 1,
 			imgPath: 'assets/siteImage.png'
 		}
@@ -42,9 +42,9 @@ const pageRoutes: Routes = [
 			component: AppletComponent
 		}],
 		data: {
-			title: 'Excelsior The Game!',
+			title: 'Excelcior The Game!',
 			pageNum: 2,
-			imgPath: 'assets/random.png'
+			imgPath: 'assets/game.png'
 		}
 	},
 	{
@@ -57,7 +57,7 @@ const pageRoutes: Routes = [
 		data: {
 			title: 'Version history of Excelsior to date',
 			pageNum: 3,
-			imgPath: 'assets/api.png'
+			imgPath: 'assets/game.png'
 		}
 	},
 	{
@@ -68,9 +68,9 @@ const pageRoutes: Routes = [
 			component: RandomComponent
 		}],
 		data: {
-			title: 'Random Shtuff!',
+			title: 'Currently Trending News Articles!',
 			pageNum: 4,
-			imgPath: 'assets/random.png'
+			imgPath: 'assets/news.png'
 		}
 	}//,
 	/*{ path: '',

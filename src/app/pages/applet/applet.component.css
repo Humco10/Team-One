@@ -1,1 +1,12 @@
-	
+#video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#download {
+    display: block;
+    width: 25%;
+    margin: 0 auto;
+    color: rgb(0, 238, 255)
+}
